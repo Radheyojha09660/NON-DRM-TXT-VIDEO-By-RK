@@ -32,3 +32,4 @@ EXPOSE 8080
 
 # Start both Flask web + bot
 CMD ["sh", "-c", "gunicorn web:app -b 0.0.0.0:8080 & python3 main.py"]
+
