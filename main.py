@@ -43,6 +43,25 @@ from pyrogram.types.messages_and_media import message
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from threading import Thread
 import keep_alive
+import keep_alive
+
+# ====== Paste async download function yahan ======
+async def download_video(url):
+    from io import BytesIO
+    buffer = BytesIO()
+    async with aiohttp.ClientSession() as session:
+        async with session.get(url) as resp:
+            while True:
+                chunk = await resp.content.read(1024*1024)  # 1 MB chunks
+                if not chunk:
+                    break
+                buffer.write(chunk)
+    buffer.seek(0)
+    return buffer
+# =================================================
+
+# 24/7 keep-alive server start
+Thread(target=keep_alive.run).start()
 
 # 24/7 keep-alive server start
 Thread(target=keep_alive.run).start()
