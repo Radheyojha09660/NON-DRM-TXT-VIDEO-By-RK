@@ -11,6 +11,15 @@ import urllib.parse
 import yt_dlp
 import cloudscraper
 import threading
+import asyncio
+import aiohttp
+import time
+import asyncio
+import aiohttp
+import time
+import subprocess
+from telegram import Bot
+from telegram.ext import Updater, CommandHandler
 from web import app 
 from logs import logging
 from bs4 import BeautifulSoup
