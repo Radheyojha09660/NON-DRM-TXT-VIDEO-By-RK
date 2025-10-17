@@ -563,7 +563,7 @@ async def txt_handler(bot: Client, m: Message):
                            f'╰━━━🖼️𝐓𝐡𝐮𝐦𝐛𝐧𝐚𝐢𝐥 » <a href="{raw_text6}">__**Thumb Link**__</a>\n' \
                            f"━━━━━━━━━━━━━━━━━━━━━━━━\n" \
                            f"🛑**Send** /stop **to stop process**\n" \
-                           f"✦𝐁𝐨𝐭 𝐌𝐚𝐝𝐞 𝐁𝐲 ✦ `🕸️𝗦𝗣𝗜𝗗𝗬🕸️`"
+                           f"✦𝐁𝐨𝐭 𝐌𝐚𝐝𝐞 𝐁𝐲 ✦ `🕸️Radhey Kishan Ojha(It's Rk)🕸️`"
                     prog = await m.reply_text(Show, disable_web_page_preview=True)
                     res_file = await helper.download_video(url, cmd, name)
                     filename = res_file
@@ -604,7 +604,7 @@ async def txt_handler(bot: Client, m: Message):
     x = await input.download()
     await input.delete(True)
     file_name, ext = os.path.splitext(os.path.basename(x))
-    credit = f"𝗦𝗣𝗜𝗗𝗬 🕷️"
+    credit = f"Radhey Kishan Ojha 🕷️"
     try:    
         with open(x, "r") as f:
             content = f.read()
@@ -653,7 +653,7 @@ async def txt_handler(bot: Client, m: Message):
 
                 if ".pdf" in url or "drive" in url or ".jpg" in url or ".jpeg" in url or ".png" in url:
                     try:
-                        await m.reply_text(text=f'——— ✨ [{str(count).zfill(3)}]({link0}) ✨ ———\n\n📔𝐓𝐢𝐭𝐥𝐞 » `{name}`\n\n✦𝐁𝐨𝐭 𝐌𝐚𝐝𝐞 𝐁𝐲 ✦ `🇸 🇵 🇮 🇩 🇾`', disable_web_page_preview=True, reply_markup=BUTTONSDOC)
+                        await m.reply_text(text=f'——— ✨ [{str(count).zfill(3)}]({link0}) ✨ ———\n\n📔𝐓𝐢𝐭𝐥𝐞 » `{name}`\n\n✦𝐁𝐨𝐭 𝐌𝐚𝐝𝐞 𝐁𝐲 ✦ `Radhey`', disable_web_page_preview=True, reply_markup=BUTTONSDOC)
                         count +=1
                     except Exception as e:
                         await m.reply_text(str(e))    
@@ -662,7 +662,7 @@ async def txt_handler(bot: Client, m: Message):
 
                 elif "classplusapp.com" in url:
                     try:
-                        await m.reply_text(text=f'——— ✨ [{str(count).zfill(3)}]({link0}) ✨ ———\n\n📔𝐓𝐢𝐭𝐥𝐞 » `{name}`\n\n✦𝐁𝐨𝐭 𝐌𝐚𝐝𝐞 𝐁𝐲 ✦ `🇸 🇵 🇮 🇩 🇾`', disable_web_page_preview=True, reply_markup=BUTTONSCP)
+                        await m.reply_text(text=f'——— ✨ [{str(count).zfill(3)}]({link0}) ✨ ———\n\n📔𝐓𝐢𝐭𝐥𝐞 » `{name}`\n\n✦𝐁𝐨𝐭 𝐌𝐚𝐝𝐞 𝐁𝐲 ✦ `Radhey`', disable_web_page_preview=True, reply_markup=BUTTONSCP)
                         count +=1
                     except Exception as e:
                         await m.reply_text(str(e))    
@@ -679,7 +679,7 @@ async def txt_handler(bot: Client, m: Message):
                         continue              
                 
                 else:
-                    Show = f"<pre><code>⚡Dᴏᴡɴʟᴏᴀᴅ Sᴛᴀʀᴛᴇᴅ...⏳\n✦𝐁𝐨𝐭 𝐌𝐚𝐝𝐞 𝐁𝐲 ✦ 🇸 🇵 🇮 🇩 🇾</code></pre>"
+                    Show = f"<pre><code>⚡Dᴏᴡɴʟᴏᴀᴅ Sᴛᴀʀᴛᴇᴅ...⏳\n✦𝐁𝐨𝐭 𝐌𝐚𝐝𝐞 𝐁𝐲 ✦ Radhey kishan ojha </code></pre>"
                     prog = await m.reply_text(Show, disable_web_page_preview=True)
                     res_file = await helper.download_video(url, cmd, name)
                     filename = res_file
@@ -697,7 +697,7 @@ async def txt_handler(bot: Client, m: Message):
 
     except Exception as e:
         await m.reply_text(e)
-    await m.reply_text("<pre><code>Converted By ⌈✨『𝗦𝗣𝗜𝗗𝗬 🕷️』✨⌋</code></pre>")
+    await m.reply_text("<pre><code>Converted By ⌈✨『Radhey ojha  🕷️』✨⌋</code></pre>")
 
 
 @bot.on_message(filters.text & filters.private & ~filters.command(["start", "help", "broadcast", "users"]))
@@ -940,7 +940,7 @@ async def text_handler(bot: Client, m: Message):
                                 
                 else:
                     emoji_message = await show_random_emojis(message)
-                    Show = f"**⚡Dᴏᴡɴʟᴏᴀᴅ Sᴛᴀʀᴛᴇᴅ...⏳**\n\n🔗𝐋𝐢𝐧𝐤 » `{link}`\n\n✦𝐁𝐨𝐭 𝐌𝐚𝐝𝐞 𝐁𝐲 ✦ `🇸 🇵 🇮 🇩 🇾`‌"
+                    Show = f"**⚡Dᴏᴡɴʟᴏᴀᴅ Sᴛᴀʀᴛᴇᴅ...⏳**\n\n🔗𝐋𝐢𝐧𝐤 » `{link}`\n\n✦𝐁𝐨𝐭 𝐌𝐚𝐝𝐞 𝐁𝐲 ✦ `Radhey`‌"
                     prog = await m.reply_text(Show)
                     res_file = await helper.download_video(url, cmd, name)
                     filename = res_file
