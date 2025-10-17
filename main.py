@@ -1059,6 +1059,13 @@ def run_web():
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
 
 if __name__ == "__main__":
-    threading.Thread(target=run_web).start()
-   
-bot.run()
+    # 24/7 server start
+    threading.Thread(target=run_web).start()  # Render keep-alive
+
+    # Auto-reconnect loop
+    while True:
+        try:
+            bot.run()  # tumhara existing bot run
+        except Exception as e:
+            print(f"Bot crashed, reconnecting... Error: {e}")
+
