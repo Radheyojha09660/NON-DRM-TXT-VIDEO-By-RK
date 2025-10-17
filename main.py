@@ -41,6 +41,11 @@ from pyrogram.errors import FloodWait
 from pyrogram.errors.exceptions.bad_request_400 import StickerEmojiInvalid
 from pyrogram.types.messages_and_media import message
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from threading import Thread
+import keep_alive
+
+# 24/7 keep-alive server start
+Thread(target=keep_alive.run).start()
 
 photologo = 'https://tinypic.host/images/2025/04/23/1000058493.jpg'
 photoyt = 'https://tinypic.host/images/2025/03/18/YouTube-Logo.wine.png'
