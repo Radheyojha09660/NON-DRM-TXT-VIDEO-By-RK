@@ -1044,50 +1044,53 @@ async def confirm_broadcast(client, query: CallbackQuery):
     else:
         users = []
 
-    success, failed = 0, 0
-    for uid in users:
-        try:
-            m = data["media"]
-            if m.text:
-               await client.send_message(uid, data["caption"], reply_markup=data["reply_markup"])
-elif m.photo:
-    await client.send_photo(uid, m.photo.file_id, caption=data["caption"], reply_markup=data["reply_markup"])
-elif m.document:
-    await client.send_document(uid, m.document.file_id, caption=data["caption"], reply_markup=data["reply_markup"])
-elif m.video:
-    from moviepy.editor import VideoFileClip
-    from PIL import Image
-    import os
+  success, failed = 0, 0
+for uid in users:
+    try:
+        m = data["media"]
+        if m.text:
+            await client.send_message(uid, data["caption"], reply_markup=data["reply_markup"])
+        elif m.photo:
+            await client.send_photo(uid, m.photo.file_id, caption=data["caption"], reply_markup=data["reply_markup"])
+        elif m.document:
+            await client.send_document(uid, m.document.file_id, caption=data["caption"], reply_markup=data["reply_markup"])
+        elif m.video:
+            from moviepy.editor import VideoFileClip
+            from PIL import Image
+            import os
 
-    # 👇 Download Telegram video to temp file
-    video_path = await client.download_media(m.video.file_id, file_name="temp_video.mp4")
-    thumb_path = "thumb.jpg"
+            # 👇 Download Telegram video to temp file
+            video_path = await client.download_media(m.video.file_id, file_name="temp_video.mp4")
+            thumb_path = "thumb.jpg"
 
-    # 🎬 Generate thumbnail at 2 seconds
-    clip = VideoFileClip(video_path)
-    frame = clip.get_frame(2)  # 2 second frame
-    im = Image.fromarray(frame)
-    im.save(thumb_path)
-    clip.close()
+            # 🎬 Generate thumbnail at 2 seconds
+            clip = VideoFileClip(video_path)
+            frame = clip.get_frame(2)  # 2 second frame
+            im = Image.fromarray(frame)
+            im.save(thumb_path)
+            clip.close()
 
-    # 📤 Send video with thumbnail & streaming
-    await client.send_video(
-        uid,
-        video_path,
-        caption=data["caption"],
-        reply_markup=data["reply_markup"],
-        thumb=thumb_path,
-        supports_streaming=True
-    )
+            # 📤 Send video with thumbnail & streaming
+            await client.send_video(
+                uid,
+                video_path,
+                caption=data["caption"],
+                reply_markup=data["reply_markup"],
+                thumb=thumb_path,
+                supports_streaming=True
+            )
 
-    # 🔹 Optional: Cleanup temp files
-    os.remove(video_path)
-    os.remove(thumb_path)
+            # 🔹 Cleanup temp files
+            if os.path.exists(video_path):
+                os.remove(video_path)
+            if os.path.exists(thumb_path):
+                os.remove(thumb_path)
 
-success += 1
-except Exception as e:
-    print(f"Error sending to {uid}: {e}")
-    failed += 1
+        success += 1
+    except Exception as e:
+        print(f"Error sending to {uid}: {e}")
+        failed += 1
+
 
 await query.message.edit(f"✅ Broadcast complete.\n\nSent: {success}\nFailed: {failed}")
 
