@@ -606,6 +606,7 @@ async def txt_handler(bot: Client, m: Message):
     continue
 
 
+
     except Exception as e:
         await m.reply_text(e)
     await m.reply_text(f"`✨𝙱𝚊𝚝𝚌𝚑 𝚂𝚞𝚖𝚖𝚊𝚛𝚢✨\n"
