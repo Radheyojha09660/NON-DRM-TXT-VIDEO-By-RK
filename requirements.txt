@@ -38,3 +38,5 @@ pyopenssl
 wget
 bs4
 beautifulsoup4
+moviepy
+pillow
