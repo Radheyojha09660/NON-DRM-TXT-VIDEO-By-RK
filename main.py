@@ -568,21 +568,24 @@ async def txt_handler(bot: Client, m: Message):
                     progress = (count / end) * 100
                     emoji_message = await show_random_emojis(message)
                     Show = f"🚀𝐏𝐑𝐎𝐆𝐑𝐄𝐒𝐒 » {progress:.2f}%\n┃\n" \
-                           f"┣🔗𝐈𝐧𝐝𝐞𝐱 » {str(count)}/{end} : {len(links)}\n┃\n" \
-                           f"╰━🖇️𝐑𝐞𝐦𝐚𝐢𝐧𝐢𝐧𝐠 𝐋𝐢𝐧𝐤𝐬 » {remaining_links}\n" \
-                           f"━━━━━━━━━━━━━━━━━━━━━━━━\n" \
-                           f"**⚡Dᴏᴡɴʟᴏᴀᴅ Sᴛᴀʀᴛᴇᴅ...⏳**\n" \
-                           f'┣💃𝐂𝐫𝐞𝐝𝐢𝐭 » `{CR}`\n┃\n' \
-                           f'╰━📚𝐁𝐚𝐭𝐜𝐡 𝐍𝐚𝐦𝐞 » `{b_name}`\n\n' \
-                           f"━━━━━━━━━━━━━━━━━━━━━━━━\n" \
-                           f"📚𝐓𝐢𝐭𝐥𝐞 » `{name}`\n┃\n" \
-                           f"┣🍁𝐐𝐮𝐚𝐥𝐢𝐭𝐲 » {raw_text2}p\n┃\n" \
-                           f'┣━🔗𝐋𝐢𝐧𝐤 » <a href="{link0}">__**Original Link**__</a>\n┃\n' \
-                           f'┣━━🖇️𝐔𝐑𝐋 » <a href="{url}">__**Modified Link**__</a>\n┃\n' \
-                           f'╰━━━🖼️𝐓𝐡𝐮𝐦𝐛𝐧𝐚𝐢𝐥 » <a href="{raw_text6}">__**Thumb Link**__</a>\n' \
-                           f"━━━━━━━━━━━━━━━━━━━━━━━━\n" \
-                           f"🛑**Send** /stop **to stop process**\n" \
-                          print("✦𝐁𝐨𝐭 𝐌𝐚𝐝𝐞 𝐁𝐲 ✦ `🕸️Radhey Kishan Ojha(It's Rk)🕸️`")
+       f"┣🔗𝐈𝐧𝐝𝐞𝐱 » {str(count)}/{end} : {len(links)}\n┃\n" \
+       f"╰━🖇️𝐑𝐞𝐦𝐚𝐢𝐧𝐢𝐧𝐠 𝐋𝐢𝐧𝐤𝐬 » {remaining_links}\n" \
+       f"━━━━━━━━━━━━━━━━━━━━━━━━\n" \
+       f"**⚡Dᴏᴡɴʟᴏᴀᴅ Sᴛᴀʀᴛᴇᴅ...⏳**\n" \
+       f'┣💃𝐂𝐫𝐞𝐝𝐢𝐭 » `{CR}`\n┃\n' \
+       f'╰━📚𝐁𝐚𝐭𝐜𝐡 𝐍𝐚𝐦𝐞 » `{b_name}`\n\n' \
+       f"━━━━━━━━━━━━━━━━━━━━━━━━\n" \
+       f"📚𝐓𝐢𝐭𝐥𝐞 » `{name}`\n┃\n" \
+       f"┣🍁𝐐𝐮𝐚𝐥𝐢𝐭𝐲 » {raw_text2}p\n┃\n" \
+       f'┣━🔗𝐋𝐢𝐧𝐤 » <a href="{link0}">__**Original Link**__</a>\n┃\n' \
+       f'┣━━🖇️𝐔𝐑𝐋 » <a href="{url}">__**Modified Link**__</a>\n┃\n' \
+       f'╰━━━🖼️𝐓𝐡𝐮𝐦𝐛𝐧𝐚𝐢𝐥 » <a href="{raw_text6}">__**Thumb Link**__</a>\n' \
+       f"━━━━━━━━━━━━━━━━━━━━━━━━\n" \
+       f"🛑**Send** /stop **to stop process**"
+
+# Now print separately
+print("✦𝐁𝐨𝐭 𝐌𝐚𝐝𝐞 𝐁𝐲 ✦ `🕸️Radhey Kishan Ojha(It\'s Rk)🕸️`")
+)
 async def send_video(m):
     prog = await m.reply_text(Show, disable_web_page_preview=True)
     res_file = await helper.download_video(url, cmd, name)
