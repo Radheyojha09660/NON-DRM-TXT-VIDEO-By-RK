@@ -582,14 +582,14 @@ async def txt_handler(bot: Client, m: Message):
                            f'╰━━━🖼️𝐓𝐡𝐮𝐦𝐛𝐧𝐚𝐢𝐥 » <a href="{raw_text6}">__**Thumb Link**__</a>\n' \
                            f"━━━━━━━━━━━━━━━━━━━━━━━━\n" \
                            f"🛑**Send** /stop **to stop process**\n" \
-                           f"✦𝐁𝐨𝐭 𝐌𝐚𝐝𝐞 𝐁𝐲 ✦ `🕸️Radhey Kishan Ojha(It's Rk)🕸️`"
-                 async def send_video(m):
+                          print("✦𝐁𝐨𝐭 𝐌𝐚𝐝𝐞 𝐁𝐲 ✦ `🕸️Radhey Kishan Ojha(It's Rk)🕸️`")
+
+async def send_video(m):
     prog = await m.reply_text(Show, disable_web_page_preview=True)
     res_file = await helper.download_video(url, cmd, name)
     filename = res_file
     await prog.delete(True)
     await emoji_message.delete()
-
 try:
     await helper.send_vid(bot, m, cc, filename, thumb, name, prog)
     count += 1
