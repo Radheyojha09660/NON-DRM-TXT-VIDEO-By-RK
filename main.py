@@ -592,7 +592,11 @@ async def txt_handler(bot: Client, m: Message):
                     count += 1
                     time.sleep(1)
 
-            except Exception as e:
+            try:
+    await emoji_message.delete()
+    await helper.send_vid(bot, m, cc, filename, thumb, name, prog)
+    count += 1
+    time.sleep(1)
 except Exception as e:
     await bot.send_photo(
         chat_id=m.chat.id,
@@ -605,6 +609,7 @@ except Exception as e:
         ),
         parse_mode="HTML"
     )
+
 
     count += 1
     failed_count += 1
