@@ -593,13 +593,14 @@ async def txt_handler(bot: Client, m: Message):
                     time.sleep(1)
 
             except Exception as e:
-    await bot.send_photo(
-        chat_id=m.chat.id,
-        photo=photologo,
-        caption=f"——— ✨ [{str(count).zfill(3)}]({link0}) ✨ ———\n\n"
-                f"📔𝐓𝐢𝐭𝐥𝐞 » `{name}`\n\n"
-                f"🔗𝐋𝐢𝐧𝐤 » <a href=\"{link0}\">__**Click Here to check manually**__</a>\n\n"
-                f"✦𝐁𝐨𝐭 𝐌𝐚𝐝𝐞 𝐁𝐲 ✦ `It's Rk`"
+await bot.send_photo(
+    chat_id=m.chat.id,
+    photo=photologo,
+    caption=f"——— ✨ [{str(count).zfill(3)}]({link0}) ✨ ———\n\n"
+            f"📔𝐓𝐢𝐭𝐥𝐞 » `{name}`\n\n"
+            f"🔗𝐋𝐢𝐧𝐤 » <a href=\"{link0}\">__**Click Here to check manually**__</a>\n\n"
+            f"✦𝐁𝐨𝐭 𝐌𝐚𝐝𝐞 𝐁𝐲 ✦ `It's Rk`"
+)
     )
     count += 1
     failed_count += 1
