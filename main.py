@@ -585,7 +585,6 @@ async def txt_handler(bot: Client, m: Message):
 
 # Now print separately
 print("✦𝐁𝐨𝐭 𝐌𝐚𝐝𝐞 𝐁𝐲 ✦ `🕸️Radhey Kishan Ojha(It\'s Rk)🕸️`")
-)
 async def send_video(m):
     prog = await m.reply_text(Show, disable_web_page_preview=True)
     res_file = await helper.download_video(url, cmd, name)
