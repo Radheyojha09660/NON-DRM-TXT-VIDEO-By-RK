@@ -583,6 +583,9 @@ async def txt_handler(bot: Client, m: Message):
        f"━━━━━━━━━━━━━━━━━━━━━━━━\n" \
        f"🛑**Send** /stop **to stop process**"
 
+# previous function ends here
+# (make sure it's not indented)
+
 async def send_video(m):
     prog = await m.reply_text(Show, disable_web_page_preview=True)
     res_file = await helper.download_video(url, cmd, name)
