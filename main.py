@@ -562,7 +562,11 @@ async def txt_handler(bot: Client, m: Message):
                         await m.reply_text(str(e))    
                         time.sleep(1)    
                         continue
-                     else:
+                                    if some_condition:
+                    # ...some code here...
+                    pass
+
+                else:
                     remaining_links = end - count
                     progress = (count / end) * 100
                     emoji_message = await show_random_emojis(message)
@@ -581,6 +585,7 @@ async def txt_handler(bot: Client, m: Message):
                            f'╰━━━🖼️𝐓𝐡𝐮𝐦𝐛𝐧𝐚𝐢𝐥 » <a href="{raw_text6}">__**Thumb Link**__</a>\n' \
                            f"━━━━━━━━━━━━━━━━━━━━━━━━\n" \
                            f"🛑**Send** /stop **to stop process**"
+
 
 # -------------------------------------------------------
 # Do NOT indent this function; it must start at far-left
