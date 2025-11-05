@@ -562,27 +562,29 @@ async def txt_handler(bot: Client, m: Message):
                         await m.reply_text(str(e))    
                         time.sleep(1)    
                         continue
-     
-                else:
+                     else:
                     remaining_links = end - count
                     progress = (count / end) * 100
                     emoji_message = await show_random_emojis(message)
                     Show = f"🚀𝐏𝐑𝐎𝐆𝐑𝐄𝐒𝐒 » {progress:.2f}%\n┃\n" \
-                    f"┣🔗𝐈𝐧𝐝𝐞𝐱 » {str(count)}/{end} : {len(links)}\n┃\n" \
-                    f"╰━🖇️𝐑𝐞𝐦𝐚𝐢𝐧𝐢𝐧𝐠 𝐋𝐢𝐧𝐤𝐬 » {remaining_links}\n" \
-                    f"━━━━━━━━━━━━━━━━━━━━━━━━\n" \
-                    f"**⚡Dᴏᴡɴʟᴏᴀᴅ Sᴛᴀʀᴛᴇᴅ...⏳**\n" \
-                    f'┣💃𝐂𝐫𝐞𝐝𝐢𝐭 » `{CR}`\n┃\n' \
-                    f'╰━📚𝐁𝐚𝐭𝐜𝐡 𝐍𝐚𝐦𝐞 » `{b_name}`\n\n' \
-                    f"━━━━━━━━━━━━━━━━━━━━━━━━\n" \
-                    f"📚𝐓𝐢𝐭𝐥𝐞 » `{name}`\n┃\n" \
-                    f"┣🍁𝐐𝐮𝐚𝐥𝐢𝐭𝐲 » {raw_text2}p\n┃\n" \
-                    f'┣━🔗𝐋𝐢𝐧𝐤 » <a href="{link0}">__**Original Link**__</a>\n┃\n' \
-                    f'┣━━🖇️𝐔𝐑𝐋 » <a href="{url}">__**Modified Link**__</a>\n┃\n' \
-                    f'╰━━━🖼️𝐓𝐡𝐮𝐦𝐛𝐧𝐚𝐢𝐥 » <a href="{raw_text6}">__**Thumb Link**__</a>\n' \
-                    f"━━━━━━━━━━━━━━━━━━━━━━━━\n" \
-                    f"🛑**Send** /stop **to stop process**"
+                           f"┣🔗𝐈𝐧𝐝𝐞𝐱 » {str(count)}/{end} : {len(links)}\n┃\n" \
+                           f"╰━🖇️𝐑𝐞𝐦𝐚𝐢𝐧𝐢𝐧𝐠 𝐋𝐢𝐧𝐤𝐬 » {remaining_links}\n" \
+                           f"━━━━━━━━━━━━━━━━━━━━━━━━\n" \
+                           f"**⚡Dᴏᴡɴʟᴏᴀᴅ Sᴛᴀʀᴛᴇᴅ...⏳**\n" \
+                           f'┣💃𝐂𝐫𝐞𝐝𝐢𝐭 » `{CR}`\n┃\n' \
+                           f'╰━📚𝐁𝐚𝐭𝐜𝐡 𝐍𝐚𝐦𝐞 » `{b_name}`\n\n' \
+                           f"━━━━━━━━━━━━━━━━━━━━━━━━\n" \
+                           f"📚𝐓𝐢𝐭𝐥𝐞 » `{name}`\n┃\n" \
+                           f"┣🍁𝐐𝐮𝐚𝐥𝐢𝐭𝐲 » {raw_text2}p\n┃\n" \
+                           f'┣━🔗𝐋𝐢𝐧𝐤 » <a href="{link0}">__**Original Link**__</a>\n┃\n' \
+                           f'┣━━🖇️𝐔𝐑𝐋 » <a href="{url}">__**Modified Link**__</a>\n┃\n' \
+                           f'╰━━━🖼️𝐓𝐡𝐮𝐦𝐛𝐧𝐚𝐢𝐥 » <a href="{raw_text6}">__**Thumb Link**__</a>\n' \
+                           f"━━━━━━━━━━━━━━━━━━━━━━━━\n" \
+                           f"🛑**Send** /stop **to stop process**"
 
+# -------------------------------------------------------
+# Do NOT indent this function; it must start at far-left
+# -------------------------------------------------------
 async def send_video(m):
     try:
         prog = await m.reply_text(Show, disable_web_page_preview=True)
@@ -591,6 +593,7 @@ async def send_video(m):
         await prog.delete(True)
         await emoji_message.delete()
 
+        # send streamable mp4
         await m.reply_video(
             video=filename,
             supports_streaming=True,
@@ -604,7 +607,7 @@ async def send_video(m):
         print(f"⚠️ Error sending video: {e}")
         await m.reply_text(f"⚠️ Failed to send video:\n`{e}`")
 
-
+# continue normal flow
 try:
     await helper.send_vid(bot, m, cc, filename, thumb, name, prog)
     count += 1
@@ -622,10 +625,10 @@ except Exception as e:
         ),
         parse_mode="HTML"
     )
-
     count += 1
     failed_count += 1
     continue
+
 
 
 
