@@ -583,13 +583,27 @@ async def txt_handler(bot: Client, m: Message):
                     f"━━━━━━━━━━━━━━━━━━━━━━━━\n" \
                     f"🛑**Send** /stop **to stop process**"
 
-# now move this function fully to the left (no indentation)
 async def send_video(m):
-    prog = await m.reply_text(Show, disable_web_page_preview=True)
-    res_file = await helper.download_video(url, cmd, name)
-    filename = res_file
-    await prog.delete(True)
-    await emoji_message.delete()
+    try:
+        prog = await m.reply_text(Show, disable_web_page_preview=True)
+        res_file = await helper.download_video(url, cmd, name)
+        filename = res_file
+        await prog.delete(True)
+        await emoji_message.delete()
+
+        await m.reply_video(
+            video=filename,
+            supports_streaming=True,
+            caption=f"🎬 {name}\n\nUploaded by 🕸️Radhey Kishan Ojha(It’s Rk)🕸️",
+            thumb=raw_text6 if 'raw_text6' in locals() else None,
+        )
+
+        print(f"✅ Successfully sent streamable video: {filename}")
+
+    except Exception as e:
+        print(f"⚠️ Error sending video: {e}")
+        await m.reply_text(f"⚠️ Failed to send video:\n`{e}`")
+
 
 try:
     await helper.send_vid(bot, m, cc, filename, thumb, name, prog)
